@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>show student info</title>
+    <style>
+      .grid-container {
+                      display: grid;
+                      grid-template-columns: auto ;
+      }
+      .grid-container > div {
+          background-color: rgba(255, 255, 255, 0.8);
+          text-align: center;
+          padding: 20px 0;
+          font-size: 30px;
+        }
+        #viewData{
+        color:blue;
+        font-size:35px;
+        font-family:Helvecia;
+        font-style: italic;
+        }
+    </style>
+</head>
+<body>
+<div align="center">
+    <h1>Edit form page</h1>
+    <div class="grid-container">
+
+    <form action="#" th:action="@{'/addNewStudentsDb/' + ${students.id}}" method="post" th:object="${students}">
+    <div><lebel>First name   :</lebel>
+        <input type="text" th:field="*{firstName}" />
+    </div>
+    <div>
+        <lebel>Last name     :</lebel>
+        <input type="text" th:field="*{lastName}" />
+    </div>
+        <div>
+            <lebel>Department name :</lebel>
+            <input type="text" th:field="*{department}" />
+        </div>
+
+        <button type="submit">save</button>
+
+    </form>
+    </div>
+
+<!--    <a href="/addStudents">return to main page</a>-->
+</div>
+
+</body>
+</html>

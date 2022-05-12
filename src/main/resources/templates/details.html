@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>show student info</title>
+    <style>
+      .grid-container {
+                      display: grid;
+                      grid-template-columns: auto ;
+      }
+      .grid-container > div {
+          background-color: rgba(255, 255, 255, 0.8);
+          text-align: center;
+          padding: 20px 0;
+          font-size: 30px;
+        }
+        #viewData{
+        color:blue;
+        font-size:35px;
+        font-family:Helvecia;
+        font-style: italic;
+        }
+        .viewDatax{
+        color:blue;
+        font-size:35px;
+        font-family:Helvecia;
+        font-style: italic;
+        padding-left:20px;
+        }
+    </style>
+</head>
+<body>
+<div align="center">
+    <h1>View Details data Page</h1>
+    <a href="/">
+        <button >go back to main page</button>
+    </a>
+
+<!--    <button oncontextmenu="myFunction()" contextmenu="mymenu">Create new Student information</button>-->
+
+    <div class="grid-container">
+        <tr >
+            <div><span>Id:</span><span ><td th:text="${students.id}"></td></span></div>
+            <div><span>First Name:</span><span > <td th:text="${students.firstName}"></td></span></div>
+            <div><span>Last Name:</span><span ><td th:text="${students.lastName}"> </td></span></div>
+            <div><span>Department:</span><span ><td th:text="${students.department}"> </td></span></div>
+            <div><span> <a class="viewDatax"  th:href="@{'/showEditForm/' + ${students.id}}">Edit</a></span>
+                 <span> <a class="viewDatax"  th:href="@{'/deleteFromDb/' + ${students.id}}">Delete</a></span>
+            </div>
+        </tr>
+    </div>
+
+
+
+
+
+
+
+
+
+</div>
+
+</body>
+</html>

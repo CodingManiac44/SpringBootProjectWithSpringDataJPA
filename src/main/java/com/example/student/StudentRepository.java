@@ -1,0 +1,40 @@
+package com.example.student;
+
+//import  org.springframework.data.jpa.repository.JpaRepository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
+
+import javax.transaction.Transactional;
+import java.util.List;
+
+@Repository
+public interface StudentRepository extends JpaRepository<StudentForm, Integer> {
+
+//    @Query(nativeQuery = true, value = "SELECT * FROM student order by id_student")
+//    @Query("SELECT s FROM StudentForm s")
+
+    List<StudentForm> findAll();
+
+
+
+//    @Query(nativeQuery = true,value = "SELECT * FROM student where id_student =:id")
+//    @Query("SELECT s FROM StudentForm s where s.id =:id")
+//    StudentForm getStudentById(@Param("id") Long id);
+    StudentForm findStudentFormById(Long id);
+
+    @Modifying
+    @Transactional
+    @Query(nativeQuery = true, value = "UPDATE student SET first_name =:fName, last_name =:lName, department =:department WHERE id_student =:id")
+    void updateStudentToDb(@Param("id") Long id,
+                                        @Param("fName") String firstName,
+                                        @Param("lName") String lastName,
+                                        @Param("department") String department);
+    @Modifying
+    @Transactional
+    @Query(nativeQuery = true, value = "DELETE  From student WHERE id_student =:id")
+    void deletestudentById(@Param("id") Long id);
+}

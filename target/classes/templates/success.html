@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>show student info</title>
+    <style>
+      .grid-container {
+                      display: grid;
+                      grid-template-columns: auto ;
+      }
+      .grid-container > div {
+          background-color: rgba(255, 255, 255, 0.8);
+          text-align: center;
+          padding: 20px 0;
+          font-size: 30px;
+        }
+        #viewData{
+        color:blue;
+        font-size:35px;
+        font-family:Helvecia;
+        font-style: italic;
+        }
+    </style>
+</head>
+<body>
+<div align="center">
+    <h1>Landing Page</h1>
+    <a href="/showForm">
+        <button th:href="@{/showForm}">Create new Student information</button>
+    </a>
+<p>you have deleted successfully</p>
+    <a href="/">
+        <button >go back to main page</button>
+    </a>
+<!--    <button oncontextmenu="myFunction()" contextmenu="mymenu">Create new Student information</button>-->
+
+<!--    <div class="grid-container">-->
+<!--        <tr th:each="student : ${students}">-->
+<!--            <div><span>Id:</span><span ><td th:text="${student.id}"></td></span></div>-->
+<!--            <div><span>First Name:</span><span > <td th:text="${student.firstName}"></td></span></div>-->
+<!--            <div><span>Last Name:</span><span ><td th:text="${student.lastName}"> </td></span></div>-->
+<!--            <div> <a id="viewData" href="/addStudentList">view data</a></div>-->
+<!--        </tr>-->
+<!--    </div>-->
+
+
+<!--secure block-->
+<!--    <tr th:each="student : ${students}">-->
+<!--        <span>Id:</span><span ><td th:text="${student.id}"></td></span>-->
+<!--        <span>First Name:</span><span > <td th:text="${student.firstName}"></td></span>-->
+<!--        <span>Last Name:</span><span ><td th:text="${student.lastName}"> </td></span>-->
+<!--    </tr>-->
+    <p> <span th:text="${saidur}"></span></p>
+
+
+
+
+
+</div>
+<script>
+<!--function myFunction() {-->
+<!--  window.location='/shoForm'-->
+<!--}-->
+</script>
+</body>
+</html>

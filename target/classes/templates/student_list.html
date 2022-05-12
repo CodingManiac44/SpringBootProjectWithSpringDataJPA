@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>show student info</title>
+</head>
+<body>
+<div align="center">
+    <h1>Student list information</h1>
+
+    <span>First name:</span><span th:each="${studentForm.firstName}"></span>
+    <br/>
+    <span>Last name:</span><span th:each="${studentForm.lastName}"></span>
+    <br/>
+    <span>Department name:</span><span th:each="${studentForm.department}"></span>
+
+
+    <a href="/addStudentList">return to main page</a>
+</div>
+
+</body>
+</html>
