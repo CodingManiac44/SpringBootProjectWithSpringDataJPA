@@ -27,7 +27,7 @@
 <div align="center">
     <h1>Create form page</h1>
     <div class="grid-container">
-    <form action="#" th:action="@{/addNewStudentsDb}" method="post" th:object="${students}">
+    <form action="#" th:action="@{'/addNewStudentsDb/' + ${students.id}}" method="post" th:object="${students}">
     <div><lebel>First name :</lebel>
         <input type="text" th:field="*{firstName}" />
     </div>

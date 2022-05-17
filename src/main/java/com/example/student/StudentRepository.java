@@ -26,6 +26,8 @@ public interface StudentRepository extends JpaRepository<StudentForm, Integer> {
 //    StudentForm getStudentById(@Param("id") Long id);
     StudentForm findStudentFormById(Long id);
 
+    //method for update
+
     @Modifying
     @Transactional
     @Query(nativeQuery = true, value = "UPDATE student SET first_name =:fName, last_name =:lName, department =:department WHERE id_student =:id")
@@ -33,8 +35,31 @@ public interface StudentRepository extends JpaRepository<StudentForm, Integer> {
                                         @Param("fName") String firstName,
                                         @Param("lName") String lastName,
                                         @Param("department") String department);
+
+
+
+
+//    @Modifying
+//    @Transactional
+//    @Query(nativeQuery = true, value = "DELETE  From student WHERE id_student =:id")
     @Modifying
     @Transactional
-    @Query(nativeQuery = true, value = "DELETE  From student WHERE id_student =:id")
-    void deletestudentById(@Param("id") Long id);
+    void deleteStudentFormById(Long id);
+
+//    @Modifying
+//    @Transactional
+//    @Query(nativeQuery = true, value = "DELETE  From student WHERE id_student =:id")
+//    void deletestudentById(@Param("id") Long id);
+
+    //new methods that support update by jpa query method
+    void save(Long id);
+    StudentForm findById(Long id);
+
+//    @Modifying
+//    @Transactional
+//    void updateStudentFormById(Long id);
+//@Query(nativeQuery = true, value = "Select * from student un ORDER BY un.id_student DESC LIMIT 1")
+//StudentForm getLastSequence();
+
+
 }
