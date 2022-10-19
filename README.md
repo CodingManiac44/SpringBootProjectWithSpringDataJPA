@@ -1,14 +1,12 @@
 # SpringBootProjectWithSpringDataJPA
 thymleaf, spring mvc, spring data JPA implemented
 
-<p>Software Engineering Skills</p>
+#Software Engineering Skills
 Git | Github | Gitlab
 HTML
 CSS
-Agile Environment| Scrum | Kanban
+Agile Environment| Scrum | develope in Sprints
 JavaScript Fundamentals: OOP, Modern ES6 Features, & Web Components
-React | Redux
-MongoDB/Mongoose
-MERN Full Stack Architecture (MongoDB, Express, React, Node) Stack
+Reactive programing
 Java /Spring Boot
 MySQL/PostgreSQL/Sequelize
