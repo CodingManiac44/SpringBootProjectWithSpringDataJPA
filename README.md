@@ -1,7 +1,7 @@
 # SpringBootProjectWithSpringDataJPA
 thymleaf, spring mvc, spring data JPA implemented
 
-#Software Engineering Skills
+# Software Engineering Skills
 Git | Github | Gitlab
 HTML
 CSS
